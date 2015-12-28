@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contacts</title>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="main.js"></script>
+  </head>
+  <body class="Site">
+
+    <div class="ui menu">
+      <div class="header item">
+        Calc
+      </div>
+      <a class="item" href="index.html">
+        Theme 1
+      </a>
+      <a class="item">
+        Theme 2
+      </a>
+      <a class="item">
+        Theme 3
+      </a>
+      <a class="item">
+        Theme 4
+      </a>
+    </div>
+
+    <div ng-app="contacts" ng-controller="contactsController" class="Site-content">
+      <table class="ui centered celled padded table">
+        <thead>
+          <tr>
+            <th ng-repeat="head in headings">
+              {{head}}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="contact in contacts">
+            <td ng-repeat="(key,prop) in contact">
+              {{prop}}
+            </td>
+          </tr>
+          <tfoot class="ui form">
+            <th class="field">
+              <input type="text" name="photo" placeholder="photo" ng-model="photo">
+            </th>
+            <th class="field">
+              <input type="text" name="firstName" placeholder="firstName" ng-model="firstName">
+            </th>
+            <th>
+              <input type="text" name="lastName" placeholder="lastName" ng-model="lastName">
+            </th>
+            <th class="field">
+              <input type="text" name="age" placeholder="age" ng-model="age">
+            </th>￼
+            <th class="field">
+              <select>
+                <option value="" ng-model="sex">Sex</option>
+                <option value="Male" ng-model="sex">Male</option>
+                <option value="Female" ng-model="sex">Female</option>
+              </select>
+            </th>
+            <th class="field">
+              <input type="text" name="phone" placeholder="phone" ng-model="phone">
+            </th>
+            <th class="field">
+              <input type="text" name="email" placeholder="email" ng-model="email">
+            </th>
+            <th class="field">
+              <input type="text" name="address" placeholder="address" ng-model="address">
+            </th>
+            <th class="field">
+              <input type="text" name="comments" placeholder="comments" ng-model="comments">
+            </th>
+          </tfoot>
+        </tbody>
+      </table>
+      <input type="button" name="newContact" ng-click="addContact()" value="Add Contact" class="ui button">
+    </div>
+
+    <div class="ui inverted vertical footer segment">
+      <p>Created by Nathan Gaul</p>
+    </div>
+
+  </body>
+</html>
