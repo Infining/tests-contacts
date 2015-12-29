@@ -28,18 +28,6 @@ app.controller("contactsController", function($scope) {
     "comments": $scope.comments
   };
 
-  $scope.contacts.push({
-    "photo": "serveimage.jpg",
-    "firstName": "Nathan",
-    "lastName": "Gaul",
-    "age": "21",
-    "sex": "Male",
-    "phone": "2088050468",
-    "email": "nathanjgaul@gmail.com",
-    "address": "1011 Deakin St Apt 5-a Moscow, ID 83843",
-    "comments": "Me"
-  });
-
   $scope.addContact = function() {
     $scope.contacts.push({
       "photo": $scope.photo,
